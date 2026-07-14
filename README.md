@@ -39,8 +39,8 @@ Salin folder skill ke direktori skill Claude Code Anda.
 **Untuk semua project (global):**
 
 ```bash
-git clone https://github.com/<user>/sbm.git
-cd sbm
+git clone https://github.com/wiraperdana/sbm-skills.git
+cd sbm-skills
 ./install.sh
 ```
 
