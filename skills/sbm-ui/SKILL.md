@@ -1,6 +1,6 @@
 ---
 name: sbm-ui
-description: Menjawab pertanyaan tentang Standar Biaya Universitas Indonesia saja, yaitu Peraturan Rektor UI Nomor 16 Tahun 2024 untuk Tahun Anggaran 2024. Pakai saat pertanyaan menyangkut dana internal UI: honorarium dosen tamu, asisten dosen, kegiatan kemahasiswaan, hibah penelitian dan pengabdian masyarakat, honorarium kepanitiaan, perjalanan dinas UI, atau penerimaan mahasiswa baru. Sebut "sbm-ui" untuk memanggilnya.
+description: Menjawab pertanyaan tentang Standar Biaya Universitas Indonesia saja, yaitu Peraturan Rektor UI Nomor 16 Tahun 2024 untuk Tahun Anggaran 2024. Pakai saat pertanyaan menyangkut dana internal UI: honorarium dosen tamu, asisten dosen, kegiatan kemahasiswaan, hibah penelitian dan pengabdian masyarakat, honorarium kepanitiaan, perjalanan dinas UI, atau penerimaan mahasiswa baru. Untuk penelitian yang didanai APBN atau DIPA Kemdiktisaintek, skill ini akan mengarahkan ke sbm-kemenkeu, karena aturannya bukan aturan UI. Sebut "sbm-ui" untuk memanggilnya.
 ---
 
 # SB UI: Standar Biaya Universitas Indonesia TA 2024
@@ -30,6 +30,23 @@ SB UI **dikecualikan** untuk komponen remunerasi dosen dan tenaga kependidikan, 
 Dari Pasal 2, SB UI berfungsi sebagai **batasan tertinggi** atau **estimasi biaya**. Periksa mana yang berlaku untuk pos yang ditanyakan, karena konsekuensinya berbeda.
 
 Dari Pasal 3: **besaran honorarium adalah nilai bruto, sebelum dipotong pajak penghasilan.** Orang sering lupa ini lalu salah menghitung penerimaan bersih. Sebutkan kalau relevan.
+
+## Penelitian berdana DIKTI tidak diatur di sini
+
+Ini pengecualian yang paling sering terlewat, dan akibatnya mahal, jadi periksa lebih dulu sebelum menjawab pertanyaan apa pun soal honorarium penelitian.
+
+Lampiran III memang memuat pos Penelitian, Inovasi, dan Pengabdian Masyarakat. Tetapi ia hanya berlaku untuk penelitian yang **dananya dari UI**. Kalau dananya dari DIPA Kementerian Pendidikan Tinggi, Sains, dan Teknologi, yang berlaku adalah dua regulasi APBN, bukan angka di sini.
+
+| Yang mengatur | Untuk apa |
+|---|---|
+| **Kepmen Diktisaintek Nomor 87/M/KEP/2026** | Honorarium tim pelaksana penelitian: ketua, anggota, tenaga administratif, pembantu peneliti. Ada pagu 25% dari dana penelitian |
+| **PMK Nomor 32 Tahun 2025** pos 7 | Honorarium penunjang penelitian: pengolah data, petugas survei, pembantu lapangan |
+
+Keduanya ada di skill `sbm-kemenkeu`, dan juga di skill gabungan `sbm`.
+
+**Cara memeriksanya.** Kalau pertanyaannya menyangkut honorarium penelitian dan sumber dananya tidak disebut, **tanyakan dulu**. Jangan menebak dari nama institusinya. Peneliti UI yang memegang hibah DIKTI tunduk pada aturan APBN, bukan pada Peraturan Rektor ini. Angkanya bisa jauh berbeda, dan memakai angka yang salah berujung revisi RAB atau temuan auditor.
+
+Kalau sumber dananya ternyata DIPA Kemdiktisaintek, katakan skill ini tidak mencakupnya, sebutkan nama regulasi yang benar, lalu arahkan ke `sbm-kemenkeu`. Jangan menjawab dengan angka UI sambil menambahkan catatan kecil. Angka yang telanjur terlihat akan tersalin.
 
 ## Struktur dokumen
 
@@ -143,4 +160,4 @@ Tanda `‹...›` di atas adalah **tempat kosong yang wajib Anda isi dari berkas
 
 Kalau angkanya tidak ketemu, katakan tidak ketemu. Sebutkan kata kunci apa saja yang sudah dicoba, dan sarankan pengguna membuka PDF-nya. **Jangan mengarang.**
 
-Kalau pertanyaannya ternyata menyangkut dana APBN, katakan skill ini hanya mencakup aturan internal UI, lalu arahkan ke `sbm-kemenkeu` atau `sbm`.
+Kalau pertanyaannya ternyata menyangkut dana APBN, katakan skill ini hanya mencakup aturan internal UI, lalu arahkan ke `sbm-kemenkeu` atau `sbm`. Untuk honorarium tim peneliti berdana DIPA Kemdiktisaintek, sebutkan juga nama regulasinya, yaitu Kepmen Diktisaintek Nomor 87/M/KEP/2026, supaya pengguna tahu apa yang dicarinya.
