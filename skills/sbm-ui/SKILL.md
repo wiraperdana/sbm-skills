@@ -1,41 +1,74 @@
 ---
 name: sbm-ui
-description: Menjawab pertanyaan tentang Standar Biaya Universitas Indonesia saja, yaitu Peraturan Rektor UI Nomor 16 Tahun 2024 untuk Tahun Anggaran 2024. Pakai saat pertanyaan menyangkut dana internal UI: honorarium dosen tamu, asisten dosen, kegiatan kemahasiswaan, hibah penelitian dan pengabdian masyarakat, honorarium kepanitiaan, perjalanan dinas UI, atau penerimaan mahasiswa baru. Untuk penelitian yang didanai APBN atau DIPA Kemdiktisaintek, skill ini akan mengarahkan ke sbm-kemenkeu, karena aturannya bukan aturan UI. Sebut "sbm-ui" untuk memanggilnya.
+description: Menjawab pertanyaan tentang Standar Biaya Universitas Indonesia, yaitu Peraturan Rektor UI Nomor 24 Tahun 2026 yang berlaku sejak 1 September 2026. Pakai saat pertanyaan menyangkut dana UI atau dana bantuan pendanaan PTN-BH, misalnya honorarium dosen tamu, asisten dosen, kegiatan kemahasiswaan, hibah penelitian dan pengabdian masyarakat, honorarium kepanitiaan, perjalanan dinas UI, penginapan, uang harian, atau penerimaan mahasiswa baru. Untuk penelitian yang didanai APBN atau DIPA Kemdiktisaintek, skill ini mengarahkan ke sbm-kemenkeu. Aturan lama PR 16/2024 tersimpan sebagai arsip dan hanya dibuka bila pengguna memintanya secara eksplisit. Sebut "sbm-ui" untuk memanggilnya.
 ---
 
-# SB UI: Standar Biaya Universitas Indonesia TA 2024
+# SB UI: Standar Biaya Universitas Indonesia
 
-Skill ini menjawab **hanya dari aturan internal Universitas Indonesia**. Kalau pertanyaannya menyangkut dana APBN, hibah kementerian, BRIN, atau DIKTI, skill ini bukan tempatnya, dan Anda harus mengatakan begitu.
+Skill ini menjawab **hanya dari aturan internal Universitas Indonesia yang berlaku**, yaitu Peraturan Rektor UI Nomor 24 Tahun 2026. Pertanyaan soal dana APBN, hibah kementerian, BRIN, atau DIKTI diarahkan ke skill lain, dan Anda wajib mengatakannya terus terang.
 
 ## Apa itu Standar Biaya UI
 
-**Standar Biaya Universitas Indonesia (SB UI)** adalah daftar harga satuan resmi yang dipakai UI saat menyusun rencana kerja anggarannya. Dalam Peraturan Rektor ini, istilah SB UI disamakan dengan Standar Biaya Masukan. Ia menjawab pertanyaan "berapa maksimal boleh dibayar untuk hal ini dari dana UI".
+**Standar Biaya Universitas Indonesia (SB UI)** adalah daftar harga satuan resmi yang dipakai UI untuk melaksanakan kegiatan dan menyusun rencana kerja anggarannya (Pasal 1 angka 12). Peraturan Rektor ini menyamakan istilah SB UI dengan Standar Biaya Masukan. Ia menjawab pertanyaan "berapa paling banyak boleh dibayar untuk hal ini dari dana UI".
 
 ## Regulasi yang jadi sumber
 
-**Peraturan Rektor Universitas Indonesia Nomor 16 Tahun 2024 tentang Standar Biaya Universitas Indonesia Tahun 2024.**
+| Hal | Isi |
+|---|---|
+| Nomor | Peraturan Rektor Universitas Indonesia Nomor 24 Tahun 2026 tentang Standar Biaya Universitas Indonesia |
+| Ditetapkan | 7 Agustus 2026 |
+| Mulai berlaku | **1 September 2026** (Pasal 12) |
+| Tahun anggaran | **Tidak disebut.** Judulnya tidak memuat tahun, jadi ia berlaku sampai dicabut atau diubah |
+| Yang dicabut | PR UI 16/2024 beserta seluruh perubahannya, terakhir PR UI 34/2025 (Pasal 11) |
 
-## Peringatan umur data, bacakan pada setiap jawaban
+**Cara menyebut waktunya di jawaban.** Tulis "berlaku sejak 1 September 2026". Hindari label "TA 2026", karena dokumennya sendiri tidak memakai label itu.
 
-**Data ini adalah Tahun Anggaran 2024.** Kalau UI sudah menerbitkan Peraturan Rektor yang lebih baru untuk tahun anggaran berjalan, angka di sini **kedaluwarsa**.
+**Periksa perubahan.** Peraturan Rektor tentang SB UI lazim diubah beberapa kali selama masa berlakunya. Pendahulu aturan ini diubah lima kali dalam dua tahun. Karena itu, setiap jawaban ditutup dengan satu kalimat pengingat: pastikan belum terbit Peraturan Rektor yang mengubah PR 24/2026.
 
-Skill ini tidak punya cara mengetahui apakah ada aturan yang lebih baru. Karena itu, setiap jawaban wajib ditutup dengan pengingat: angka ini bersumber PR 16/2024 untuk TA 2024, dan pengguna perlu memastikan tidak ada Peraturan Rektor pengganti. **Jangan pernah diam soal ini.** Diam membuat pengguna mengira angkanya berlaku hari ini.
+## Ruang lingkup, dan ke mana pertanyaan diarahkan
 
-## Ruang lingkup dan pengecualian
+| Pasal | Ketentuan | Akibatnya bagi jawaban |
+|---|---|---|
+| 4 ayat (1) | Berlaku untuk kegiatan yang bersumber dari **dana UI** dan **dana bantuan pendanaan PTN-BH** | Dua sumber dana ini dijawab dari sini |
+| 4 ayat (2) | Hal yang **belum diatur** di sini mengikuti **PMK tentang Standar Biaya Masukan** | Pos yang tidak ditemukan diarahkan ke `sbm-kemenkeu` |
+| 5 ayat (1) | Kegiatan berdana **APBN atau APBD** mengikuti standar biaya masukan Pemerintah | Pertanyaan berdana APBN diarahkan ke `sbm-kemenkeu` |
+| 5 ayat (2) | Kegiatan berdana **pihak lain lewat perikatan kerja sama** boleh memakai besaran berbeda yang ditetapkan UI | Sebutkan bahwa perjanjian kerja samanya bisa mengatur lain |
+| 6 | **UKK** (Unit Kerja Khusus) boleh punya standar biaya sendiri, lewat Peraturan Rektor atau Peraturan Dekan dan Direktur Sekolah. Bila UKK tidak menyusunnya, PR 24/2026 yang berlaku | Kalau penanya bekerja di UKK, sebutkan kemungkinan ini |
+| 2 | SB UI berfungsi sebagai **batasan tertinggi** atau **estimasi biaya** | Baca judul kolom tabelnya, lihat bagian "Sifat tarif" |
+| 3 | Besaran honorarium adalah **nilai bruto**, sebelum dipotong pajak penghasilan | Sebutkan kalau yang ditanya honorarium |
 
-Dari Pasal 4: SB UI berlaku untuk kegiatan yang dananya **bersumber dari dana UI**, dan **dapat** berlaku untuk dana yang bersumber dari Bantuan Pendanaan PTN-BH.
+**Pasal 4 ayat (2) adalah satu-satunya jalan keluar saat sebuah pos tidak ada di PR 24/2026.** Jalan keluarnya menuju PMK SBM. Arsip PR 16/2024 tidak pernah menjadi jalan keluar.
 
-SB UI **dikecualikan** untuk komponen remunerasi dosen dan tenaga kependidikan, serta honorarium lain yang ditetapkan terpisah. Jangan memakai skill ini untuk menjawab pertanyaan remunerasi.
+## Sifat tarif: baca judul kolom
 
-Dari Pasal 2, SB UI berfungsi sebagai **batasan tertinggi** atau **estimasi biaya**. Periksa mana yang berlaku untuk pos yang ditanyakan, karena konsekuensinya berbeda.
+Setiap tabel menyatakan sifatnya di judul kolom besaran. Konsekuensinya berbeda, jadi jangan menebak.
 
-Dari Pasal 3: **besaran honorarium adalah nilai bruto, sebelum dipotong pajak penghasilan.** Orang sering lupa ini lalu salah menghitung penerimaan bersih. Sebutkan kalau relevan.
+| Judul kolom | Arti | Contoh letaknya |
+|---|---|---|
+| `BESARAN TERTINGGI` | Batas atas, tidak boleh dilampaui | Sebagian besar tabel |
+| `BESARAN ESTIMASI` | Perkiraan untuk perencanaan anggaran | Lampiran IV pos 1a (sewa kendaraan operasional kantor), Lampiran VI pos 3 dan 4 (tiket pesawat dalam dan luar negeri) |
+
+Sebagian tabel hanya berjudul `KATEGORI` atau `BESARAN` tanpa keterangan, misalnya uang harian perjalanan dinas luar negeri. Untuk tabel seperti itu, katakan judul kolomnya tidak menyebut sifat tarif, lalu baca bagian Penjelasan di bawahnya.
+
+## Kategori pegawai (Pasal 8)
+
+Banyak tarif perjalanan dinas, penginapan, dan paket rapat berjenjang menurut kategori pegawai. Kategori ini khas UI, dan ia **tidak sama dengan eselon** gaya Kemenkeu.
+
+| Kategori | Terdiri dari |
+|---|---|
+| A | Ketua dan sekretaris MWA, SA, DGB, Rektor, Wakil Rektor, kepala badan, sekretaris Universitas, Dekan, Direktur Sekolah, atau pejabat setara |
+| B | Anggota MWA, SA, DGB, direktur, wakil Dekan, wakil Direktur Sekolah, kepala rumah sakit UI, kepala UKK, ketua dan sekretaris departemen, staf khusus Rektor, fungsional utama, atau pejabat setara |
+| C | Kepala kantor, wakil direktur, kepala sub direktorat, sekretaris fakultas, manajer, ketua dan sekretaris program studi, kepala laboratorium, fungsional madya, atau pejabat setara |
+| D | Kepala seksi, koordinator, sekretaris pimpinan, asisten manajer, atau pejabat setara |
+| E | Pegawai UI selain kategori A sampai D |
+
+Pegawai yang memegang jabatan manajerial dan fungsional di kategori berbeda memakai **kategori yang lebih tinggi** (Pasal 8 ayat 3). Tabel di atas ringkasan. Untuk kasus batas, baca Pasal 8 langsung di berkas teks.
 
 ## Penelitian berdana DIKTI tidak diatur di sini
 
-Ini pengecualian yang paling sering terlewat, dan akibatnya mahal, jadi periksa lebih dulu sebelum menjawab pertanyaan apa pun soal honorarium penelitian.
+Ini pengecualian yang paling sering terlewat, dan akibatnya mahal. Periksa lebih dulu sebelum menjawab pertanyaan apa pun soal honorarium penelitian.
 
-Lampiran III memang memuat pos Penelitian, Inovasi, dan Pengabdian Masyarakat. Tetapi ia hanya berlaku untuk penelitian yang **dananya dari UI**. Kalau dananya dari DIPA Kementerian Pendidikan Tinggi, Sains, dan Teknologi, yang berlaku adalah dua regulasi APBN, bukan angka di sini.
+Lampiran III memang memuat pos Penelitian, Inovasi, dan Pengabdian Masyarakat. Ia berlaku untuk penelitian berdana UI atau dana bantuan pendanaan PTN-BH. Penjelasan Lampiran III pos 2 menegaskan RAB proposal hibah **mengikuti pedoman pemberi hibah**, dan Pasal 5 ayat (1) menyerahkan kegiatan berdana APBN kepada standar biaya Pemerintah. Kalau dananya dari DIPA Kementerian Pendidikan Tinggi, Sains, dan Teknologi, yang berlaku adalah dua regulasi APBN ini:
 
 | Yang mengatur | Untuk apa |
 |---|---|
@@ -44,103 +77,165 @@ Lampiran III memang memuat pos Penelitian, Inovasi, dan Pengabdian Masyarakat. T
 
 Keduanya ada di skill `sbm-kemenkeu`, dan juga di skill gabungan `sbm`.
 
-**Cara memeriksanya.** Kalau pertanyaannya menyangkut honorarium penelitian dan sumber dananya tidak disebut, **tanyakan dulu**. Jangan menebak dari nama institusinya. Peneliti UI yang memegang hibah DIKTI tunduk pada aturan APBN, bukan pada Peraturan Rektor ini. Angkanya bisa jauh berbeda, dan memakai angka yang salah berujung revisi RAB atau temuan auditor.
+**Jebakan yang tampak meyakinkan.** Plafon honorarium ketua dan anggota peneliti di Lampiran III pos 2 sama besar dengan plafon Kepmen 87. Aturan penyertanya berbeda. Kepmen 87 menambahkan pagu 25% dari dana penelitian dan batas tiga proyek per orang, dan ia menghitung honor ketua sebagai turunan dari honor anggota. Lampiran III pos 2 menulis plafon ketua sebagai angka tetap. Kesamaan angka tidak membuat kedua dokumen bisa dipertukarkan.
 
-Kalau sumber dananya ternyata DIPA Kemdiktisaintek, katakan skill ini tidak mencakupnya, sebutkan nama regulasi yang benar, lalu arahkan ke `sbm-kemenkeu`. Jangan menjawab dengan angka UI sambil menambahkan catatan kecil. Angka yang telanjur terlihat akan tersalin.
+**Cara memeriksanya.** Kalau pertanyaannya menyangkut honorarium penelitian dan sumber dananya tidak disebut, **tanyakan dulu**. Nama institusi tidak menentukan aturannya. Peneliti UI yang memegang hibah DIKTI tunduk pada aturan APBN.
+
+Kalau sumber dananya ternyata DIPA Kemdiktisaintek, katakan skill ini tidak mencakupnya, sebutkan nama regulasi yang benar, lalu arahkan ke `sbm-kemenkeu`. Jangan menyodorkan angka UI dengan catatan kecil, karena angka yang telanjur terlihat akan tersalin.
 
 ## Struktur dokumen
 
-Tujuh lampiran, dibagi menurut jenis kegiatan.
+Batang tubuh berisi 4 bab dan 12 pasal. Tarifnya ada di tujuh lampiran, total 104 pos biaya.
 
-| Lampiran | Cakupan |
-|---|---|
-| **I** | Kegiatan Pendidikan (honorarium dosen tamu, asisten dosen) |
-| **II** | Kegiatan Kemahasiswaan (bantuan organisasi, penghargaan, kompetisi, beasiswa) |
-| **III** | Penelitian, Inovasi, Pengabdian Masyarakat, Inkubasi Bisnis, Kekayaan Intelektual |
-| **IV** | Penyelenggaraan Operasional Manajemen (kendaraan, fasilitas, konstruksi) |
-| **V** | Honorarium Kegiatan (kepanitiaan, tim ad hoc, kesenian) |
-| **VI** | Perjalanan Dinas (paket rapat di luar kantor) |
-| **VII** | Penyelenggaraan Penerimaan Mahasiswa Baru |
+| Lampiran | Cakupan | Jumlah pos |
+|---|---|---|
+| **I** | Kegiatan Pendidikan | 13 |
+| **II** | Kegiatan Kemahasiswaan | 27 |
+| **III** | Penelitian, Inovasi, Pengabdian Masyarakat, Inkubasi Bisnis, Kekayaan Intelektual | 9 |
+| **IV** | Penyelenggaraan Operasional Manajemen | 26 |
+| **V** | Honorarium Kegiatan | 12 |
+| **VI** | Perjalanan Dinas | 9 |
+| **VII** | Penyelenggaraan Penerimaan Mahasiswa Baru | 8 |
 
 ## Aturan keras
 
-1. **Jangan pernah menjawab dari ingatan.** Setiap angka wajib dibaca langsung dari `references/sb-ui-ta2024.md`. Angka salah di dokumen anggaran berbiaya nyata: revisi RAB, temuan auditor, dana ditolak.
-2. **Selalu sebut**: Peraturan Rektor UI Nomor 16 Tahun 2024, lampiran keberapa, pos nomor berapa, dan bahwa ia berlaku untuk TA 2024.
-3. **Selalu bacakan peringatan umur data** di atas.
-4. **Selalu cantumkan nomor baris** tempat angka dibaca, plus perintah verifikasi ke PDF asli.
-5. **Kalau OCR ambigu, katakan ambigu.** Jangan menambal tebakan.
+1. **Jangan pernah menjawab dari ingatan.** Setiap angka wajib dibaca langsung dari `references/sb-ui-ta2026.md`. Angka salah di dokumen anggaran berbiaya nyata: revisi RAB, temuan auditor, dana ditolak.
+2. **Selalu sebut**: Peraturan Rektor UI Nomor 24 Tahun 2026, lampiran keberapa, pos nomor berapa, dan tanggal mulai berlakunya, 1 September 2026.
+3. **Selalu sebut sifat tarifnya** menurut judul kolom tabel.
+4. **Selalu cantumkan nomor baris dan halaman PDF** tempat angka dibaca, plus perintah verifikasi ke PDF asli.
+5. **Kalau angkanya ambigu, katakan ambigu.** Jangan membetulkan atau menebak.
+6. **Arsip PR 16/2024 tertutup.** Ia hanya dibuka atas permintaan eksplisit pengguna. Aturan lengkapnya di bagian "Arsip PR UI 16/2024".
 
-## Sumber data dan keterbatasannya
+## Sumber data dan mutunya
 
 Di `references/`:
 
 | Berkas | Isi |
 |---|---|
-| `sb-ui-ta2024.md` | Teks penuh Peraturan Rektor UI 16/2024 |
-| `indeks-ui-ta2024.md` | Peta pos biaya per lampiran beserta nomor barisnya |
+| `sb-ui-ta2026.md` | Teks penuh PR UI 24/2026, 6.392 baris. Setiap halaman diawali penanda `[PDF hal. N]` |
+| `indeks-ui-ta2026.md` | Peta 104 pos biaya per lampiran, dengan nomor baris dan halaman PDF |
+| `arsip/` | Teks dan indeks PR UI 16/2024. Tertutup, lihat bagian arsip |
 
-**Teksnya hasil OCR, dan tabelnya rusak cukup parah.** Contoh nyata:
+Label `ta2026` pada nama berkas menandai tahun mulai berlaku. Konvensi yang sama dipakai berkas Kepmen 87 di skill `sbm-kemenkeu`, yang juga berlaku untuk tahun 2026 dan sesudahnya.
+
+**Teksnya diambil dari lapisan teks asli PDF, tanpa OCR.** PDF-nya diekspor dari Word, jadi setiap huruf dan angka tersimpan sebagai teks. Tata letak tabel dipertahankan dengan `pdftotext -layout`. Hasilnya diverifikasi lewat dua kanal yang independen. Pertama, seluruh 144 halaman di-OCR ulang dari gambarnya. Dari 1.747 angka tarif di lapisan teks, 776 terbaca identik oleh OCR, dan sisanya kebanyakan gagal terbaca karena garis tabel. Kedua, 25 halaman bertabel dilihat langsung, yaitu sampel dari ketujuh lampiran ditambah setiap halaman tempat OCR membaca angka yang berbeda. Di semua halaman itu angka lapisan teks cocok dengan gambar, dan setiap perbedaan ternyata salah baca OCR. Halaman lainnya belum dicocokkan mata satu per satu, jadi verifikasi ke PDF tetap langkah wajib sebelum angka masuk dokumen resmi.
+
+**Empat cacat yang ada di dokumen sumbernya sendiri.** Ini salah ketik UI, dan ekstraksi teks mereproduksinya dengan setia.
+
+| Letak | Yang tertulis di PDF | Cara menjawab |
+|---|---|---|
+| Lampiran VI pos 7, Penginapan Dalam Negeri, Kepulauan Riau kategori A | `6.1 77.000` | Sampaikan apa adanya sebagai ambigu, lalu suruh pengguna mengonfirmasi ke unit keuangan |
+| Lampiran III pos 2, Pengolah Data Penelitian/Perekayasaan | Kolom SATUAN berisi "Penelitian/Perekayasaan" | Katakan satuannya tidak tertulis jelas |
+| Lampiran I pos 1, judul | `HONORARIUM DOSEN TAM` | Tidak memengaruhi angka. Kata kunci "dosen tamu" tetap menemukan baris tabelnya |
+| Daftar Lampiran, PDF halaman 9 sampai 12 | Bertanda air "DRAFT" | Daftar itu hanya alat navigasi. Batang tubuh dan ketujuh lampiran bersih dan ditandatangani elektronik. Sebutkan ini bila pengguna meragukan keabsahannya |
+
+**Label baris bisa terbelah.** Tabel dengan uraian panjang menaruh huruf baris dan angkanya di tengah label. Contoh nyata dari Lampiran I pos 2:
 
 ```
-| 7 | | Honor | Narasumber | | Pembekalan | | O/Pertemuan | | 400.000 |
+                    Asisten berstatus mahasiswa
+               g                                                         O/Hadir                          205.000
+                    pada Program S1 RPL
 ```
 
-Angkanya terbaca, kolomnya berantakan. Dokumen UI lebih rusak daripada dokumen Kemenkeu, dan sejumlah baris tarif kehilangan label barisnya. Karena itu skill ini jujurnya adalah **pencari lokasi**, bukan kalkulator. Verifikasi ke `sources/pr-ui-16-2024-sb-ui-ta2024.pdf` bukan formalitas, melainkan langkah wajib sebelum angka dipakai.
-
-Indeks pos biaya dibangun otomatis, dan ia **tidak lengkap**. Sejumlah judul rusak OCR sehingga terlewat. Jangan menyimpulkan sebuah pos tidak ada hanya karena ia tidak muncul di indeks.
+Labelnya "Asisten berstatus mahasiswa pada Program S1 RPL", terbelah di atas dan di bawah baris angka. **Selalu baca satu atau dua baris di atas dan di bawah angka** sebelum menyimpulkan labelnya.
 
 ## Cara menjawab, langkah demi langkah
 
-**Langkah 1. Tentukan lampirannya** dari tabel struktur di atas. Ini mempersempit pencarian secara besar.
+**Langkah 1. Pastikan sumber dananya.** Dana UI atau dana bantuan pendanaan PTN-BH dijawab dari sini. Dana APBN diarahkan keluar. Kalau tidak disebut dan tarifnya bisa berbeda besar, tanyakan.
 
-**Langkah 2. Orientasi lewat indeks.** Buka `indeks-ui-ta2024.md`. Ingat, ia tidak lengkap.
+**Langkah 2. Tentukan lampirannya, lalu buka indeks.** Buka `indeks-ui-ta2026.md`. Indeks itu memetakan seluruh 104 pos yang tercantum di Daftar Lampiran.
 
-**Langkah 3. Cari dengan resep tahan-OCR.** Ini bagian terpenting, dan tempat skill ini paling mudah gagal kalau Anda salah langkah.
-
-**Jangan pakai `grep` polos.** Ia akan gagal, dan gagalnya diam-diam: nol hasil, seolah posnya tidak ada. Penyebabnya, OCR menyelipkan pipa tabel dan spasi ganda di tengah frasa. Baris 438 aslinya begini:
-
-```
-| 1.  HONORARIUM  |     |     | DOSEN    |           | TAMU     |    ...
-```
-
-`grep -i "dosen tamu"` tidak akan menemukannya. Padahal itu judul posnya.
-
-**Pakai resep ini.** Ia menormalkan pipa dan spasi lebih dulu. `sed` dan `tr` tidak menambah atau menghapus baris, jadi **nomor barisnya tetap akurat** terhadap berkas asli:
+**Langkah 3. Cari dengan resep tahan-spasi.** Teks dokumen ini rata kanan-kiri, jadi di banyak baris antar-kata terselip spasi ganda. `grep` polos gagal diam-diam pada baris seperti itu. Contoh nyata:
 
 ```bash
-sed 's/|/ /g' references/sb-ui-ta2024.md | tr -s ' ' | grep -n -i "dosen tamu"
+grep -n -i "bantuan pelaksanaan" references/sb-ui-ta2026.md
+# hanya menemukan baris 4280, sebuah butir penjelasan
+
+tr -s ' ' < references/sb-ui-ta2026.md | grep -n -i "bantuan pelaksanaan"
+# menemukan baris 341 (Daftar Lampiran) dan baris 1296 (judul pos yang dicari)
 ```
 
-Kalau masih nihil, **mundur ke satu kata yang paling khas**, misalnya `"tamu"` saja. Pakai juga beberapa sinonim, karena dokumen memakai istilah formal yang mungkin bukan istilah si penanya.
+`tr -s ' '` meringkas spasi beruntun tanpa menambah atau menghapus baris, jadi **nomor barisnya tetap akurat**. Temuan di bawah baris 560 berasal dari batang tubuh atau Daftar Lampiran, sedangkan tarifnya ada di baris 560 ke atas.
 
-**Langkah 4. Baca konteksnya, jangan cuma barisnya.** Baca sekitar 30 baris di sekeliling temuan, dengan normalisasi yang sama supaya tabelnya terbaca:
+Kalau masih nihil, mundur ke satu kata yang paling khas, dan coba sinonim. Dokumen memakai istilah formal: "uang harian" untuk uang saku perjalanan, "paket rapat/pertemuan di luar kantor" untuk fullboard, "penginapan" untuk hotel.
+
+**Langkah 4. Baca konteksnya, lalu catat halaman PDF-nya.** Baca sekitar 40 baris di sekeliling temuan:
 
 ```bash
-sed -n '430,470p' references/sb-ui-ta2024.md | sed 's/|/ /g' | tr -s ' '
+sed -n '1290,1335p' references/sb-ui-ta2026.md | tr -s ' '
 ```
 
-Tarif UI berjenjang menurut jabatan, gelar, atau tingkat kegiatan. Contohnya honorarium dosen tamu berbeda antara Menteri, Guru Besar, Doktor, dan Magister. Satu baris tanpa konteks akan menyesatkan.
+Halaman PDF untuk rujukan adalah penanda `[PDF hal. N]` terdekat di atas baris temuan:
 
-**Langkah 5. Baca penjelasannya.** Banyak pos diikuti blok "Penjelasan" yang memuat syarat pembayaran. Tarif tanpa syarat adalah setengah jawaban.
+```bash
+awk 'NR<=1296 && /^\[PDF hal\./ {p=$0} NR==1296 {print p; exit}' references/sb-ui-ta2026.md
+```
+
+Tarif UI berjenjang menurut jabatan, gelar, kategori pegawai, provinsi, atau tingkat kegiatan. Satu baris tanpa konteks akan menyesatkan.
+
+**Langkah 5. Baca Penjelasan di bawah tabel.** Hampir setiap pos diikuti blok "Penjelasan" yang memuat syarat pembayaran, batas frekuensi, atau siapa yang berhak. Tarif tanpa syarat adalah setengah jawaban.
 
 **Langkah 6. Susun jawabannya** memakai template di bawah.
 
 ## Kamus satuan
 
-Dokumen UI **tidak memuat legenda satuan yang terpusat**, dan notasinya berbeda dari gaya Kemenkeu. Satuan ditulis dengan garis miring, dan kadang dieja penuh.
+Pasal 9 menetapkan singkatannya:
 
-| Notasi yang muncul | Arti |
+| Singkatan | Arti |
 |---|---|
-| `O/J` | Orang per jam |
-| `O/Hadir` | Orang per kehadiran |
-| `O/B` | Orang per bulan |
-| `O/Pertemuan` | Orang per pertemuan |
-| `U/B` | Unit per bulan |
-| `K` | Per kegiatan |
-| `T` | Per tahun |
-| `B` | Per bulan |
+| `O` | Orang |
+| `Mhs` | Mahasiswa |
+| `J` | Jam |
+| `H` | Hari |
+| `B` | Bulan |
+| `T` | Tahun |
+| `K` | Kegiatan |
+| `P` | Paket |
+| `U` | Unit |
 
-**Jangan menyamakan `O/J` gaya UI dengan `OJ` gaya Kemenkeu tanpa memeriksa.** Baca satuannya apa adanya dari baris yang bersangkutan. Kalau satuan sebuah baris tidak terbaca karena OCR, katakan tidak terbaca, dan suruh pengguna membuka PDF.
+Singkatan itu digabung dengan garis miring. `O/J` berarti orang per jam, `O/K` orang per kegiatan, `U/T` unit per tahun. Tiga variasi perlu dikenali:
+
+1. **Spasi yang terselip.** `O/ J` sama dengan `O/J`.
+2. **Satuan yang dieja.** Contohnya `O/Sesi`, `O/Kali`, `O/Judul`, `O/Pendaftar`, `O/Butir Soal`, `Kelompok`, dan `Permohonan`.
+3. **Mata uang asing.** Sebagian tabel dinyatakan dalam dolar AS. Tandanya tulisan `(Dalam USD)` di atas tabel atau `USD` di depan angka. Tabel USD memakai **koma** sebagai pemisah ribuan, misalnya `6,778`, sedangkan tabel rupiah memakai titik.
+
+`at cost` berarti dibayar sebesar pengeluaran aktual.
+
+**Jangan menyamakan `O/J` gaya UI dengan `OJ` gaya Kemenkeu tanpa memeriksa.** Baca satuannya apa adanya dari baris yang bersangkutan.
+
+## Arsip PR UI 16/2024: tertutup kecuali diminta
+
+PR UI 16/2024 sudah dicabut. Teksnya disimpan di `references/arsip/` supaya tetap bisa dirujuk. Ia **tidak pernah** menjadi sumber jawaban default.
+
+**Arsip boleh dibuka hanya bila pengguna memintanya secara eksplisit.** Contoh permintaan eksplisit:
+
+- menyebut "PR 16/2024", "Peraturan Rektor 16 Tahun 2024", atau "SB UI 2024";
+- meminta "aturan lama" atau "aturan sebelumnya";
+- meminta perbandingan tarif lama dengan tarif sekarang.
+
+**Hal-hal berikut bukan permintaan, jadi arsip tetap tertutup:**
+
+- sebuah pos tidak ditemukan di PR 24/2026. Jalan keluarnya Pasal 4 ayat (2), yaitu PMK SBM;
+- pengguna menyebut kegiatan tahun 2025 atau bulan sebelum September 2026;
+- pengguna menulis "SB UI" tanpa tahun;
+- angka di PR 24/2026 ambigu atau cacat.
+
+**Selama arsip tertutup, tiga hal dilarang:**
+
+1. Menawarkan arsip, misalnya "kalau mau, saya bisa cek aturan 2024".
+2. Menyebut angka dari arsip, termasuk sebagai pembanding atau konteks.
+3. Menyarankan pengguna memakai aturan lama.
+
+**Kegiatan yang dilaksanakan sebelum 1 September 2026.** Pasal 10 PR 24/2026 menyatakan kegiatan seperti itu mengacu pada PR 16/2024 beserta perubahannya. Kalau pertanyaan pengguna jelas menyangkut kegiatan sebelum tanggal itu, sampaikan isi Pasal 10 sebagai fakta hukum dari aturan yang berlaku, lalu berhenti di situ. Jangan menyebut angka lama, dan jangan menawarkan membuka arsip.
+
+**Saat arsip dibuka atas permintaan eksplisit:**
+
+1. Baca dari `references/arsip/sb-ui-ta2024.md` dan `references/arsip/indeks-ui-ta2024.md`. Blok peringatan di kepala berkas itu menjelaskan statusnya.
+2. Tandai setiap angka dengan "PR UI 16/2024, sudah dicabut".
+3. Sampaikan bahwa teks arsip itu versi asli hasil OCR, dan **lima perubahannya belum masuk**, termasuk yang terakhir, PR UI 34/2025. Angkanya bisa berbeda dari yang benar-benar berlaku sampai 31 Agustus 2026.
+4. Rujuk PDF-nya di `sources/pr-ui-16-2024-sb-ui-ta2024.pdf`.
+5. Teks arsip hasil OCR dengan tabel rusak. Pakai resep `sed 's/|/ /g' references/arsip/sb-ui-ta2024.md | tr -s ' ' | grep -n -i "<kata>"`.
+6. Jawaban arsip tidak ditutup dengan rekomendasi memakai angka lama.
 
 ## Bentuk jawaban
 
@@ -148,16 +243,16 @@ Sajikan seperti ini. Bahasa Indonesia, kalimat pendek, angka di depan.
 
 > **Honorarium dosen tamu bergelar Doktor: Rp‹BESARAN› per orang per jam (O/J).**
 >
-> Dasar: Peraturan Rektor UI Nomor 16 Tahun 2024, **Lampiran I** (Kegiatan Pendidikan), pos nomor 1 (Honorarium Dosen Tamu). Berlaku untuk **Tahun Anggaran 2024**.
+> Dasar: Peraturan Rektor UI Nomor 24 Tahun 2026, **Lampiran I** (Kegiatan Pendidikan), pos nomor 1 (Honorarium Dosen Tamu). Berlaku sejak **1 September 2026**. Sifatnya **‹batas tertinggi atau estimasi›**, sesuai judul kolom tabelnya.
+>
+> Syarat yang menyertainya: ‹ringkas dari bagian Penjelasan›
 >
 > Besaran ini **bruto**, sebelum potongan pajak penghasilan (Pasal 3).
 >
-> Dibaca dari `references/sb-ui-ta2024.md` baris ‹N› sampai ‹M›. Verifikasi ke `sources/pr-ui-16-2024-sb-ui-ta2024.pdf` sebelum dipakai di dokumen resmi.
->
-> ⚠️ Angka ini bersumber aturan **TA 2024**. Pastikan UI belum menerbitkan Peraturan Rektor pengganti untuk tahun anggaran yang Anda pakai.
+> Dibaca dari `references/sb-ui-ta2026.md` baris ‹N› sampai ‹M›. Verifikasi ke `sources/pr-ui-24-2026-sb-ui-ta2026.pdf` halaman ‹P› sebelum dipakai di dokumen resmi. Pastikan juga belum terbit Peraturan Rektor yang mengubah PR 24/2026.
 
 Tanda `‹...›` di atas adalah **tempat kosong yang wajib Anda isi dari berkas**. Template ini sengaja tidak memuat angka rupiah satu pun, supaya tidak ada angka contoh yang tanpa sadar tersalin jadi jawaban.
 
-Kalau angkanya tidak ketemu, katakan tidak ketemu. Sebutkan kata kunci apa saja yang sudah dicoba, dan sarankan pengguna membuka PDF-nya. **Jangan mengarang.**
+**Kalau angkanya tidak ketemu,** katakan tidak ketemu di PR 24/2026. Sebutkan kata kunci yang sudah dicoba. Lalu sampaikan Pasal 4 ayat (2): hal yang belum diatur mengikuti PMK tentang Standar Biaya Masukan, dan arahkan ke `sbm-kemenkeu` atau `sbm`. **Jangan mengarang, dan jangan membuka arsip.**
 
-Kalau pertanyaannya ternyata menyangkut dana APBN, katakan skill ini hanya mencakup aturan internal UI, lalu arahkan ke `sbm-kemenkeu` atau `sbm`. Untuk honorarium tim peneliti berdana DIPA Kemdiktisaintek, sebutkan juga nama regulasinya, yaitu Kepmen Diktisaintek Nomor 87/M/KEP/2026, supaya pengguna tahu apa yang dicarinya.
+**Kalau pertanyaannya ternyata menyangkut dana APBN,** katakan skill ini hanya mencakup aturan internal UI, lalu arahkan ke `sbm-kemenkeu` atau `sbm`. Untuk honorarium tim peneliti berdana DIPA Kemdiktisaintek, sebutkan juga nama regulasinya, yaitu Kepmen Diktisaintek Nomor 87/M/KEP/2026, supaya pengguna tahu apa yang dicarinya.

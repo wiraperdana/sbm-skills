@@ -6,7 +6,9 @@ Tiga skill untuk Claude Code yang menjawab pertanyaan tarif **Standar Biaya Masu
 |---|---|---|
 | `/sbm` | Dana APBN **dan** UI, berdampingan | Ketiganya |
 | `/sbm-kemenkeu` | Dana APBN saja | PMK 32/2025 + Kepmen Diktisaintek 87/M/KEP/2026 |
-| `/sbm-ui` | Universitas Indonesia saja | PR UI 16/2024 |
+| `/sbm-ui` | Universitas Indonesia saja | PR UI 24/2026 |
+
+Aturan UI lama, PR UI 16/2024, sudah dicabut. Teksnya disimpan sebagai arsip di `references/arsip/` pada skill `/sbm` dan `/sbm-ui`. Skill hanya membukanya bila Anda memintanya secara eksplisit. Ia tidak pernah dipakai sebagai jawaban default, cadangan, atau saran.
 
 Nama `/sbm-kemenkeu` dipertahankan meski isinya kini dua regulasi dari dua kementerian. Sumber utamanya tetap PMK Kemenkeu, dan mengganti nama skill hanya memutus alamat yang sudah biasa diketik.
 
@@ -22,9 +24,11 @@ Skill ini menutup celah itu dengan cara yang membosankan tapi benar. Ia membawa 
 |---|---|---|
 | PMK Nomor 32 Tahun 2025 | 2025 | **2026** |
 | Kepmen Diktisaintek Nomor 87/M/KEP/2026 | 2026 | **2026** dan sesudahnya |
-| Peraturan Rektor UI Nomor 16 Tahun 2024 | 2024 | **2024** |
+| Peraturan Rektor UI Nomor 24 Tahun 2026 | 2026 | **Tidak disebut.** Berlaku sejak 1 September 2026 sampai dicabut atau diubah |
 
 PMK terbit 2025, tapi isinya SBM untuk TA 2026. Jadi kalau Anda mencari "SBM 2026", dokumennya adalah PMK 32/2025 ini. Ketiga skill selalu menyebut kedua tahun itu supaya Anda tidak tertukar. Kepmen 87 kebetulan terbit di tahun anggaran yang diaturnya, jadi di situ tidak ada jebakan.
+
+PR UI 24/2026 punya jebakan yang berlawanan: judulnya tidak menyebut tahun anggaran sama sekali. Skill menyebutnya dengan tanggal mulai berlaku, 1 September 2026. Aturan ini mencabut PR UI 16/2024 beserta lima perubahannya.
 
 ## Mana yang berlaku untuk saya
 
@@ -32,9 +36,11 @@ PMK terbit 2025, tapi isinya SBM untuk TA 2026. Jadi kalau Anda mencari "SBM 202
 
 - Dana APBN (hibah kementerian, BRIN, DIKTI) → **SBM Kemenkeu**
 - Honorarium tim peneliti berdana **DIPA Kemdiktisaintek** → **Kepmen 87/M/KEP/2026**, bersama PMK 32/2025
-- Dana internal UI → **SB UI**
+- Dana UI dan dana bantuan pendanaan PTN-BH → **SB UI**
 
 Peneliti UI yang memakai hibah APBN tunduk pada SBM Kemenkeu, bukan SB UI. Angkanya bisa berbeda jauh. Kalau ragu, pakai `/sbm` dan ia akan menyajikan keduanya.
+
+Pos yang tidak diatur SB UI mengikuti PMK tentang Standar Biaya Masukan, menurut Pasal 4 ayat (2) PR UI 24/2026.
 
 ## Honorarium tim peneliti: perlu dua dokumen, bukan satu
 
@@ -98,30 +104,33 @@ Setelah terpasang, panggil dengan `/sbm`, `/sbm-kemenkeu`, atau `/sbm-ui`.
 
 ```
 skills/
-  sbm/           SKILL.md + references/ (teks PMK + Kepmen 87 + UI, plus indeksnya)
+  sbm/           SKILL.md + references/ (teks PMK + Kepmen 87 + UI 2026, plus indeksnya)
+                 references/arsip/ (teks UI 2024 yang sudah dicabut)
   sbm-kemenkeu/  SKILL.md + references/ (teks PMK + Kepmen 87, plus indeksnya)
-  sbm-ui/        SKILL.md + references/ (teks UI, plus indeksnya)
+  sbm-ui/        SKILL.md + references/ (teks UI 2026, plus indeksnya)
+                 references/arsip/ (teks UI 2024 yang sudah dicabut)
 sources/
   pmk-32-2025-sbm-ta2026.pdf         PDF asli, ground truth
   salinan-87-m-kep-2026.pdf          PDF asli, ground truth
-  pr-ui-16-2024-sb-ui-ta2024.pdf     PDF asli, ground truth
+  pr-ui-24-2026-sb-ui-ta2026.pdf     PDF asli, ground truth
+  pr-ui-16-2024-sb-ui-ta2024.pdf     PDF asli, arsip, sudah dicabut
+tools/
+  build_index.py, render_index.py    Indeks dari teks OCR (PMK, arsip UI 2024)
+  pdf_ke_teks.py                     Teks referensi dari PDF yang punya lapisan teks asli
+  indeks_dari_daftar_lampiran.py     Indeks SB UI dari Daftar Lampiran dokumennya
 ```
 
 ## Keterbatasan, baca ini sebelum memakai
 
-**Teks regulasinya hasil OCR, dan tabelnya rusak sebagian.** Contoh nyata dari berkas UI:
-
-```
-| 7 | | Honor | Narasumber | | Pembekalan | | O/Pertemuan | | 400.000 |
-```
-
-Angkanya terbaca, kolomnya berantakan. Karena itu skill ini jujurnya adalah **pencari lokasi**, bukan kalkulator. Ia menemukan pos biayanya dan membaca angkanya, lalu menyuruh Anda mengecek ke PDF. Skill ini dirancang untuk mengaku tidak tahu, bukan menebak.
+**Teks PMK 32/2025 hasil OCR, dan tabelnya rusak sebagian.** Angkanya terbaca, tetapi pipa tabel dan spasi ganda berserakan di tengah baris, jadi kolomnya berantakan. Karena itu skill ini jujurnya adalah **pencari lokasi**, bukan kalkulator. Ia menemukan pos biayanya dan membaca angkanya, lalu menyuruh Anda mengecek ke PDF. Skill ini dirancang untuk mengaku tidak tahu, bukan menebak.
 
 **PDF asli disertakan justru untuk itu.** Verifikasi bukan formalitas. Untuk dokumen resmi, angkanya harus Anda konfirmasi sendiri ke PDF.
 
 **Kepmen 87 adalah pengecualian yang lebih baik.** Dokumennya hanya 3 halaman, dan seluruh isinya sudah dicocokkan ke gambar halaman aslinya, bukan sekadar dilewatkan OCR. Angkanya bisa dipercaya. Verifikasi ke PDF tetap disarankan sebelum masuk dokumen resmi.
 
-**Data UI berumur.** SB UI di sini adalah TA 2024. Kalau UI sudah menerbitkan Peraturan Rektor yang lebih baru, angkanya kedaluwarsa. Skill `/sbm-ui` memperingatkan hal ini di setiap jawaban, tapi ia tidak punya cara mengetahui apakah aturan baru sudah ada. Itu tugas Anda.
+**Teks PR UI 24/2026 jauh lebih bersih.** PDF-nya diekspor dari Word, jadi teksnya diambil langsung dari lapisan teks asli, tanpa OCR. Verifikasinya memakai dua kanal. Seluruh 144 halaman di-OCR ulang, dan 776 dari 1.747 angka tarif terbaca identik. Lalu 25 halaman bertabel dilihat langsung, termasuk setiap halaman tempat OCR membaca angka berbeda, dan semua perbedaan itu ternyata salah baca OCR. Empat cacat berasal dari PDF-nya sendiri, misalnya tarif penginapan Kepulauan Riau kategori A yang tertulis `6.1 77.000`. Skill menyebutkan keempatnya dan melaporkannya sebagai ambigu.
+
+**Aturan UI bisa berubah.** PR UI 24/2026 berlaku sejak 1 September 2026, dan pendahulunya diubah lima kali dalam dua tahun. Skill `/sbm-ui` mengingatkan hal ini di setiap jawaban, tapi ia tidak punya cara mengetahui apakah perubahan sudah terbit. Itu tugas Anda.
 
 **Ini bukan produk resmi Kemenkeu maupun UI.** Ia alat bantu tidak resmi. Keputusan anggaran tetap ada pada Anda dan unit keuangan Anda.
 
@@ -130,9 +139,12 @@ Angkanya terbaca, kolomnya berantakan. Karena itu skill ini jujurnya adalah **pe
 Saat PMK atau Peraturan Rektor baru terbit:
 
 1. Taruh PDF barunya di `sources/`.
-2. Ekstrak teksnya jadi markdown, taruh di `references/` skill yang relevan, dengan nama yang memakai **tahun anggaran**, bukan tahun regulasi.
-3. Bangun ulang indeksnya dengan `tools/build_index.py`.
-4. Perbarui tabel tahun di SKILL.md dan di README ini.
+2. Periksa apakah PDF-nya punya lapisan teks asli. Coba `pdftotext -f 1 -l 3 -layout <pdf> -`. Kalau teksnya terbaca rapi, pakai `tools/pdf_ke_teks.py`. Kalau kosong atau acak, PDF itu hasil pindaian dan perlu OCR.
+3. Taruh teksnya di `references/` skill yang relevan, dengan nama yang memakai **tahun anggaran**, bukan tahun regulasi. Bila regulasinya tidak menyebut tahun anggaran, pakai tahun mulai berlakunya.
+4. Bangun ulang indeksnya. Pakai `tools/indeks_dari_daftar_lampiran.py` untuk dokumen UI yang punya Daftar Lampiran, atau `tools/build_index.py` untuk teks OCR.
+5. Verifikasi angkanya ke gambar halaman PDF.
+6. Kalau regulasi baru mencabut yang lama, pindahkan teks lama ke `references/arsip/` dengan `git mv`, pasang blok peringatan di kepala berkasnya, dan tulis aturan buka-arsip di SKILL.md.
+7. Perbarui tabel tahun di SKILL.md dan di README ini.
 
 ## Lisensi
 

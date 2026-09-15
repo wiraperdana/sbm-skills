@@ -1,3 +1,15 @@
+> **ARSIP. BUKAN ATURAN YANG BERLAKU.**
+>
+> Peraturan Rektor UI Nomor 16 Tahun 2024 sudah dicabut oleh Peraturan Rektor UI Nomor 24 Tahun 2026 (Pasal 11). Aturan pengganti itu berlaku sejak 1 September 2026, dan teksnya ada di `../sb-ui-ta2026.md`.
+>
+> Buka berkas ini hanya bila pengguna meminta aturan 2024 secara eksplisit. Berkas ini dilarang dipakai sebagai jawaban default, sebagai cadangan saat sebuah pos tidak ditemukan di PR 24/2026, atau sebagai saran.
+>
+> Teks ini versi asli PR 16/2024 hasil OCR. Lima perubahannya belum masuk, termasuk yang terakhir, Peraturan Rektor UI Nomor 34 Tahun 2025. Angka di sini bisa berbeda dari angka yang benar-benar berlaku sampai 31 Agustus 2026.
+>
+> Nomor baris di `indeks-ui-ta2024.md` sudah memperhitungkan blok peringatan ini.
+
+---
+
 PERATURAN REKTOR UNIVERSITAS INDONESIA
 NOMOR | TAHUN 2024
 TENTANG
